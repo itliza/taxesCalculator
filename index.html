@@ -89,14 +89,16 @@
             </div>
         </div>
 
-        <h2 class="title">Введіть суму вашого щомісячного доходу</h2>
-        <form action="">
-            <span>
-                &#8372
-                <input type="text" id="monthlySalary" class="monthly__salary">
-            </span>
-            <button class="btn btn__calc">Прорахувати</button>
-        </form>
+        <div class="data">
+            <h2 class="title">Введіть суму вашого щомісячного доходу</h2>
+            <form action="">
+                <span>
+                    &#8372
+                    <input type="text" id="monthlySalary" class="monthly__salary">
+                </span>
+                <button class="btn btn__calc">Прорахувати</button>
+            </form>
+        </div>
 
         <div class="results">
             <div class="result__box-decor taxes__results">
@@ -114,7 +116,13 @@
                 </div>
             </div>
         </div>
+
+        <div class="warning">
+            <h2 class="title warning__title">Будь ласка, перевірте правильність введених даних. Ваш щорічний дохід перевищує ліміт в обраній групі ФОП</h2>
+
+        </div>
     </div>
+    
 
     <script src="script.js"></script>
 </body>

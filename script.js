@@ -23,10 +23,6 @@ btnSelect.addEventListener('click', (e)=>{
 
     selectGroup.addEventListener('change', ()=>{
 
-        // if(selectGroup.selectedIndex > 0) {
-        //     btnConfirm.style.display = 'block';
-        // }
-
         if(selectGroup.selectedIndex === 1) {
             document.querySelector('.first__group').style.display = 'block';
             document.querySelector('.second__group').style.display = 'none';
@@ -41,6 +37,13 @@ btnSelect.addEventListener('click', (e)=>{
             document.querySelector('.first__group').style.display = 'none';
             
         }
+        let speed = 1500;
+        setTimeout(showData, speed);
+
+        function showData(){
+            document.querySelector('.data').style.display = 'block';
+        }
+        
     })
 
 
@@ -76,44 +79,69 @@ btnCalc.addEventListener('click', calculateTaxes);
 
 function calculateTaxes(e){
     e.preventDefault();
-    document.querySelector('.results').style.display = 'flex';
+    // document.querySelector('.results').style.display = 'flex';
     let moneyGet = monthlySalary.value;
+    // let singleTax;
+    // let singleSocialContribution;
+    // let sumTax;
+    // let salaryCalc = moneyGet - sumTax;
 
-    if(selectGroup.selectedIndex === 0) {
-        alert('Оберіть групу')
-    }
-    
-    if(selectGroup.selectedIndex === 1) {
-        let singleTax = 2600 * 0.1 / 3;
-        let singleSocialContribution = 6500 * 0.22 / 3;
-        let sumTax = singleTax + singleSocialContribution;
+
+
+    function addData(taxAmount, salaryAmount) {
+        let singleTax;
+        let singleSocialContribution;
+        let sumTax;
         let salaryCalc = moneyGet - sumTax;
-        sumTax = sumTax.toFixed(2);
-        salaryCalc = salaryCalc.toFixed(2);
-        document.querySelector('#taxesCalc').textContent = sumTax;
-        document.querySelector('#salaryCalc').textContent = salaryCalc;
+        taxAmount = taxAmount.toFixed(2);
+        salaryAmount = salaryAmount.toFixed(2);
+        document.querySelector('#taxesCalc').textContent = taxAmount;
+        document.querySelector('#salaryCalc').textContent = salaryAmount;
+        document.querySelector('.results').style.display = 'flex';
+    }
+
+    function checkResult(salaryAmount) {
+        let yearlySalary = salaryAmount * 12;
+        if(yearlySalary > 1000000) {
+            document.querySelector('.warning').style.display = 'block';
+        }
+    }
+
+    if(moneyGet === '') {
+        alert('Введіть необхідну суму')
+    } 
+    else if (isNaN(moneyGet)) {
+        alert('Введіть тільки цифри')
+    }   
+    else if(selectGroup.selectedIndex === 1) {
+        singleTax = 2600 * 0.1 / 3;
+        singleSocialContribution = 6500 * 0.22 / 3;
+        sumTax = singleTax + singleSocialContribution;
+        salaryCalc = moneyGet - sumTax;
+        addData(sumTax, salaryCalc);
+        // checkResult(salaryCalc);
     }
     else if(selectGroup.selectedIndex === 2) {
-        let singleTax = 6500 * 0.20 / 3;
-        let sumTax = singleTax;
-        let salaryCalc = moneyGet - sumTax;
-        sumTax = sumTax.toFixed(2);
-        salaryCalc = salaryCalc.toFixed(2);
-        document.querySelector('#taxesCalc').textContent = sumTax;
-        document.querySelector('#salaryCalc').textContent = salaryCalc;
+        singleTax = 6500 * 0.20 / 3;
+        sumTax = singleTax;
+        salaryCalc = moneyGet - sumTax;
+        addData(sumTax, salaryCalc);
+        // checkResult(salaryCalc);
+        
     } 
     else if(selectGroup.selectedIndex === 3) {
-        let singleTax = moneyGet * 0.05;
-        let singleSocialContribution = 6500 * 0.22;
-        let sumTax = singleTax + singleSocialContribution;
-        let salaryCalc = moneyGet - sumTax;
-        sumTax = sumTax.toFixed(2);
-        salaryCalc = salaryCalc.toFixed(2);
-        document.querySelector('#taxesCalc').textContent = sumTax;
-        document.querySelector('#salaryCalc').textContent = salaryCalc;
+        singleTax = moneyGet * 0.05;
+        singleSocialContribution = 6500 * 0.22;
+        sumTax = singleTax + singleSocialContribution;
+        salaryCalc = moneyGet - sumTax;
+        addData(sumTax, salaryCalc);
+        // checkResult(salaryCalc);
+        
+
     } 
 
-    
+    checkResult(salaryCalc);
+
 }
 
 

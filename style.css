@@ -23,7 +23,7 @@ body {
     width: 100%;
     margin: 100px auto;
     background-color: #fff;
-    min-height: 90vh;
+    /* min-height: 90vh; */
 }
 .info {
     font-size: 26px;
@@ -80,7 +80,7 @@ body {
 .first__group {
 
 }
-.first__group, .second__group, .third__group {
+.first__group, .second__group, .third__group, .data, .warning {
     display: none;
 }
 .monthly__salary {
@@ -96,8 +96,52 @@ body {
 .result__box-decor {
     background: linear-gradient(135deg, #B5D39D 0%, #F1ACAC 25.66%, #BF98C6 54.47%, #7179EF 86.04%, #2833D0 100%);
     padding: 2px;
+    margin-bottom: 30px;
 }
 .result__box {
     background-color: #fff;
     padding: 28px;
 }
+.warning {
+    background-color: rgba(255, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 15px;
+    color: #fff;
+    max-width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    animation: pulse 2s infinite;
+}
+.warning__title {
+    text-transform: uppercase;
+}
+
+.warning:hover {
+    animation: none;
+  }
+  
+  @-webkit-keyframes pulse {
+    0% {
+      -webkit-box-shadow: 0 0 0 0 -10px rgba(255, 0, 0, 0.5);
+    }
+    70% {
+        -webkit-box-shadow: 0 0 0 20px rgba(255, 0, 0, 0.5);
+    }
+    100% {
+        -webkit-box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.5);
+    }
+  }
+  @keyframes pulse {
+    0% {
+      -moz-box-shadow: 0 0 0 0 -10px rgba(255, 0, 0, 0.5);
+      box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+    }
+    70% {
+        -moz-box-shadow: 0 0 0 20px rgba(255, 0, 0, 0.5);
+        box-shadow: 0 0 0 10px rgba(255, 0, 0, 0.5);
+    }
+    100% {
+        -moz-box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.5);
+        box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.5);
+    }
+  }
