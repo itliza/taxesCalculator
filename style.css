@@ -1,0 +1,103 @@
+body {
+    background: #E6EBE6;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 18px;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.logo {
+    width: 96px;
+    height: 96px;
+    margin-right: 30px;
+}
+.logo img {
+    width: 100%;
+}
+.container {
+    max-width: 1200px;
+    padding: 50px;
+    width: 100%;
+    margin: 100px auto;
+    background-color: #fff;
+    min-height: 90vh;
+}
+.info {
+    font-size: 26px;
+}
+.title {
+    font-size: 28px;
+}
+.content__box {
+    display: flex;
+}
+.selection__container {
+    flex: 0 0 35%;
+    margin-right: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.btn {
+    font-size: 18px;
+    background-color: black;
+    color: #fff;
+    padding: 10px 20px;
+    min-width: 20%;
+    border-radius: 25px;
+    border: none;
+    margin-bottom: 20px;
+}
+.btn a {
+    color: #fff;
+    text-decoration: none;
+}
+.btn__confirm, .btn__calc {
+    display: none;
+}
+.select__group {
+    display: none;
+    min-width: 20%;
+    padding: 10px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 18px;
+    width: 90%;
+    margin-bottom: 20px;
+}
+.choose__item {
+}
+.group__info {
+
+}
+.info__title {
+    font-size: 24px;
+}
+.info__text {
+    font-size: 18px;
+}
+.first__group {
+
+}
+.first__group, .second__group, .third__group {
+    display: none;
+}
+.monthly__salary {
+    margin-bottom: 20px;
+    padding: 10px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 18px;
+}
+.results {
+    display: none;
+    justify-content: space-between;
+}
+.result__box-decor {
+    background: linear-gradient(135deg, #B5D39D 0%, #F1ACAC 25.66%, #BF98C6 54.47%, #7179EF 86.04%, #2833D0 100%);
+    padding: 2px;
+}
+.result__box {
+    background-color: #fff;
+    padding: 28px;
+}
